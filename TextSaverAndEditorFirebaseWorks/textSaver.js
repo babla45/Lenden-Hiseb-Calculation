@@ -7,9 +7,24 @@ const firebaseConfig = {
     appId: "1:732300991872:web:26519f2c8ecb1a9eb9b565"
 };
 
-firebase.initializeApp(firebaseConfig);
 
+
+firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+
+function Alert(message) {
+    const alertBox = document.getElementById('customAlert');
+    const alertMessage = document.getElementById('alertMessage');
+    alertMessage.textContent = message;
+
+    alertBox.className = "custom-alert show";  // Show the alert
+    setTimeout(() => {
+        alertBox.className = alertBox.className.replace("show", "");  // Hide the alert after 1 second
+    }, 3000); // Time in milliseconds (1000ms = 1 second)
+}
+
+// Example usage
+
 
 var i = 1;
 
@@ -22,9 +37,10 @@ function saveData() {
         }).then(() => {
             textObj.value = '';
             fetchData();
-            alert("Uploaded successfully!");
+            Alert("Data saved successfully!");
         }).catch((error) => {
-            alert("Error saving text: " + error);
+            Alert("Error saving text: "+error);
+            // alert("Error saving text: " + error);
         });
     }
 }
@@ -37,9 +53,9 @@ function editData(docId, newText) {
         content: newText
     }).then(() => {
         fetchData(); // Refresh data after editing
-        alert("Edited successfully!");
+        Alert("Edited successfully!");
     }).catch((error) => {
-        alert("Error editing document: " + error);
+        Alert("Error editing document: " + error);
     });
 }
 
@@ -76,7 +92,7 @@ function fetchData() {
             displayText.appendChild(p);
         });
     }).catch((error) => {
-        alert("Error fetching data: " + error);
+        Alert("Error fetching data: " + error);
     });
 }
 
@@ -102,16 +118,16 @@ function fetchDataOld() {
             displayText.appendChild(p);
         });
     }).catch((error) => {
-        alert("Error fetching data: " + error);
+        Alert("Error fetching data: " + error);
     });
 }
 
 function deleteData(docId) {
     db.collection('texts').doc(docId).delete().then(() => {
         fetchData(); // Refresh the data display after deletion
-        alert("Deleted successfully!");
+        Alert("Deleted successfully!");
     }).catch((error) => {
-        alert("Error deleting document: " + error);
+        Alert("Error deleting document: " + error);
     });
 }
 
