@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save and Fetch Text from Firebase</title>
+</head>
+<body style="text-align: center;">
+
+  <h1>Text Saver</h1>
+  
+    <input type="text"  id="textInput" placeholder="Enter some text">
+    <button  onclick='saveData()'>Save Text</button>
+
+  <h2>Saved Text:</h2>
+  <div id="displayText">
+
+  </div>
+
+  <!-- Firebase SDK (v8.x.x) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+  <!-- Link to external JavaScript file -->
+  <script src="textSaver.js"></script>
+
+  <style>
+    #displayText{
+        color:rgb(13, 243, 36);
+        border: 2.5px solid red;
+        font-weight: bold;
+    }
+    button{
+        margin-left: 9px;
+        border-radius: 12px;
+    }
+    input{
+      border-radius: 9px;
+      padding: 8px;
+      min-width: 400px;
+    }
+  </style>
+  
+</body>
+</html>

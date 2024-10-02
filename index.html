@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receivable</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- -------------mobile banking---------- -->
+      <div class="mobile-banking">
+        <b>Mobile Banking</b>
+        <div class="bkash">
+          <b>Bkask: </b> <input type="number" placeholder="Enter Amount" />
+        </div>
+        <div class="rocket">
+          <b>rocket: </b> <input type="number" placeholder="Enter Amount" />
+        </div>
+        <div class="nagad">
+          <b>Nagad: </b> <input type="number" placeholder="Enter Amount" />
+        </div>
+
+        <div>
+          <b class="total-amount">Total: </b>
+        </div>
+      </div>
+
+      <!-- ------bank------ -->
+      <div class="bank">
+        <b>Bank Account</b>
+        <div class="dbbl">
+          <b>DBBl: </b> <input type="number" placeholder="Enter Amount" />
+        </div>
+        <div class="janata">
+          <b>JB: </b> <input type="number" placeholder="Enter Amount" />
+        </div>
+        <div>
+          <b class="total-amount">Total: </b>
+        </div>
+      </div>
+
+      <!-- ------cash--------- -->
+      <div class="cash">
+        <b>Total Cash</b><br />
+        <b>Amount: </b> <input type="number" placeholder="Enter Amount" />
+      </div>
+
+      <!-- ---------receivable---------- -->
+      <div class="receivable">
+        <b>Receivable</b><br />
+
+        <div>
+            <b>Name:</b> <input type="text" placeholder="Enter Name" />
+            <b>Amount:</b> <input type="number" placeholder="Enter Amount" />
+        </div>
+        
+        <div>
+          <b class="total-amount">Total: </b>
+        </div>
+      </div>
+
+      <!-- ------------debt------------- -->
+      <div class="debt">
+        <b>Debt</b><br />
+        <b>Name:</b> <input type="number" placeholder="Enter Amount" />
+        <div>
+          <b class="total-amount">Total: </b>
+        </div>
+      </div>
+
+      <!-- ------------Summary------------- -->
+      <div class="summary">
+        <b>Summary</b><br />
+        <p id="total">Total Amount:</p>
+        <p id="actual">Actual Amount:</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
